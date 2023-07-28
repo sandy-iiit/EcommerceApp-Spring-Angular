@@ -1,0 +1,15 @@
+
+<div class="detail-section">
+<div class="container-fluid" style="display:flex;">
+   <img src="{{product.imageUrl}}" class="detail-img">
+  <div style="margin-top: 60px">
+    <h3>{{product.name}}</h3>
+    <div style="font-size: 20px;"  class="price"><span style="color: black;">Price: </span>{{product.unitPrice | currency:'USD'}}</div>
+    <button (click)="addToCart()" style="margin-top: 20px;" class="btn btn-dark">Add to Cart</button>
+    <h2 style="margin-top: 20px;">Description: </h2>
+    <p style="font-size: 18px">{{product.description}}</p>
+  </div>
+  </div>
+  <a routerLink="/products" class="btn btn-dark" style="margin-left: 40%;margin-top: 30px;">Back to Products List</a>
+</div>
+

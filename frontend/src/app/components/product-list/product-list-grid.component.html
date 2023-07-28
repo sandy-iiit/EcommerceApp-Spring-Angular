@@ -1,0 +1,57 @@
+
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <h4 >Category:<span style="color: #cf1000"> {{catName}}</span></h4>
+      <div class="row">
+
+
+        <div *ngFor="let product of products" class="col-md-3">
+          <div class="product-box">
+            <img style="cursor: pointer" routerLink="/products/{{product.id}}" src="{{product.imageUrl}}" class="img-responsive">
+            <h1 style="cursor: pointer" routerLink="/products/{{product.id}}">{{product.name}}</h1>
+            <div class="price">{{product.unitPrice | currency:'USD'}}</div>
+            <button  (click)="addToCart(product)" class="btn btn-dark">Add to cart</button>
+          </div>
+        </div>
+
+        <div *ngIf="products?.length==0" class="alert alert-dark col-md-12" role="alert">
+            No Products Found
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-5">
+            <div  style="display:flex;align-items: center;justify-content: space-between;width: 500px;flex-direction: row">
+              <div class="col-md-9" >
+                  <ngb-pagination  [(page)]="thePageNumber"
+                                    [pageSize]="thePageSize" [collectionSize]="theTotalElements"
+                                    (pageChange)="listProducts()"
+                  [maxSize]="4" [boundaryLinks]="true">
+
+                  </ngb-pagination>
+              </div>
+              <div class="col-md-4" style="margin-left: 20px;margin-bottom: 20px;display: flex;flex-direction: row">
+                <span class="mr-2">Page Size</span>
+                <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                  <option>2</option>
+                  <option>5</option>
+                  <option selected='true'>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
