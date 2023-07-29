@@ -1,5 +1,5 @@
 # EcommerceApp-Spring-Angular
-I am providing images for the project to give an idea and undertanding until I deploy this web app.
+I am providing images for the project to give an idea and undertanding until I deploy this web app as I am still working on improvising it.
 
 Home Page:
 
